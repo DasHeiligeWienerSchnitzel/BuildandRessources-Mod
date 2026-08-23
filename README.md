@@ -1,10 +1,55 @@
-# BuildandRessources-Mod
-Build and Ressources is an ACE-based construction system for Arma 3. Using resource crates and a Fortify Tool, players can construct a wide range of structures.
+MBuild and Ressources
 
-The build list is configurable, allowing mission makers to define which structures can be built, their resource costs, categories, and build times. During placement, players can adjust an object's height, rotation, and distance before construction is confirmed. More information can be found in the README.
+Requirements
 
-Resources are normally consumed when a structure is built and partially refunded when it is removed. Mission makers can disable building costs entirely through the CBA Addon Options for missions that do not require a resource economy.
+CBA_A3
+ACE3
 
-Each resource crate has a configurable maximum capacity through CBA Addon Options, while its individual starting amount can be set through Eden Attributes. Crates can be loaded onto and unloaded from supported flatbed vehicles, allowing players to transport building materials across the map.
+Mission Maker Setup
 
-The mod also includes a Ressource Depot, which can store Concrete, Wood, Sand, and Metal separately. Mission makers can configure which resource types a depot supports, its initial stock, transfer range, and whether players may withdraw or deposit resources. Depot stocks can be finite, start full, or be set to infinite supply. Players can refill compatible crates from nearby depots or return unused resources to them.
+Place one or more ressource crates in Eden or through Zeus:
+- RessourceCrate_Concrete
+- RessourceCrate_Wood
+- RessourceCrate_Sand
+- RessourceCrate_Metal
+
+When having an Fortify Tool in the inventory the player will have the build list.
+
+The build list can be modified by following the instruction:
+
+In your mission folder create a initServer.sqf and a folder named BuildAndRessources. 
+Inside this folder create a file named buildables.sqf.
+The structure should look like this:
+
+Mission.Map\
+├── initServer.sqf
+└── BuildAndRessources\
+   └── buildables.sqf
+
+In the buildables.sqf you can write your new buildables that will show up in the game.
+Here is a quick example. The first entry is the classname of the object. 
+The second entry is the cost [Concrete, Wood, Sand, Metal].
+Third Entry is the name and fourth is the build time.
+
+[
+   ["Land_BagFence_Long_F", [0,0,20,0], "Sandbag (Long)", "Fortifications", 5],
+   ["Land_HBarrier_5_F", [0,0,80,0], "H-Barrier", "H-Barriers", 12]
+]
+
+In the initServer.sqf your add:
+
+BuildAndRessources_classnameList = call compile preprocessFileLineNumbers "BuildAndRessources\buildables.sqf";
+publicVariable "BuildAndRessources_classnameList";
+
+	
+4. Ressource inside ressource crates can be checked via ACE Interaction also enables to load them onto supported flatbeds.
+
+Build Controls
+
+Mouse wheel: Move the preview object up or down.
+Ctrl + mouse wheel: Rotate the preview object.
+Shift + mouse wheel: Move the preview object closer or farther away.
+
+Supported Flatbeds
+
+The mod supports vanilla HEMTT flatbeds and optionally supports UK3CB BAF MAN HX58 cargo vehicles when UK3CB is loaded.
