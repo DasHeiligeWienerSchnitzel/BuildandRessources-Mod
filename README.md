@@ -19,9 +19,9 @@ Inside this folder create a file named buildables.sqf.
 The structure should look like this:
 
 Mission.Map\
-├── initServer.sqf
-└── BuildAndRessources\
-   └── buildables.sqf
+├ initServer.sqf
+└ BuildAndRessources\
+  └── buildables.sqf
 
 In the buildables.sqf you can write your new buildables that will show up in the game.
 Here is a quick example. The first entry is the classname of the object. 
