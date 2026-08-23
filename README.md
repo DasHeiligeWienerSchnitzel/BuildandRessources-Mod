@@ -42,9 +42,9 @@ publicVariable "BuildAndRessources_classnameList";
 Ressource inside ressource crates can be checked via ACE Interaction also enables to load them onto supported flatbeds.
 
 ## Build Controls
-Mouse wheel: Move the preview object up or down.
-Ctrl + mouse wheel: Rotate the preview object.
-Shift + mouse wheel: Move the preview object closer or farther away.
+- Mouse wheel: Move the preview object up or down.
+- Ctrl + mouse wheel: Rotate the preview object.
+- Shift + mouse wheel: Move the preview object closer or farther away.
 
 ## Supported Flatbeds
 The mod supports vanilla HEMTT flatbeds and optionally supports UK3CB BAF MAN HX58 cargo vehicles when UK3CB is loaded.
