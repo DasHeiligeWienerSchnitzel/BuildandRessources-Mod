@@ -1,4 +1,3 @@
-//Defines the addon itself, its dependencies and the objects it adds.
 class CfgPatches
 {
     class BuildAndRessources
@@ -7,7 +6,6 @@ class CfgPatches
         author = "Das Heilige Wiener Schnitzel";
         requiredVersion = 2.22;
 
-        //Addons that must be loaded before BuildAndRessources.
         requiredAddons[] =
         {
             "A3_Structures_F",
@@ -16,7 +14,6 @@ class CfgPatches
             "ace_interact_menu"
         };
 
-        //Objects introduced by this addon.
         units[] =
         {
             "RessourceCrate_Concrete",
@@ -26,17 +23,15 @@ class CfgPatches
             "RessourceDepot"
         };
 
-        //No new weapons are added by this addon.
         weapons[] = {};
     };
 };
 
-//Registers all SQF functions used by the mod.
+//Registers all sqf functions
 class CfgFunctions
 {
     class BuildAndRessources
     {
-        //Creates function names such as BuildAndRessources_fnc_placeObject.
         tag = "BuildAndRessources";
 
         class BuildAndRessources_Functions
