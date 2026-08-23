@@ -20,6 +20,7 @@ The structure should look like this:
 
 Mission.Map\
 ├ initServer.sqf
+
 └ BuildAndRessources\
   └── buildables.sqf
 
