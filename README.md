@@ -18,9 +18,9 @@ In your mission folder create a initServer.sqf and a folder named BuildAndRessou
 Inside this folder create a file named buildables.sqf.
 The structure should look like this:
 
-Mission.Map\
+Mission.Map
 - initServer.sqf
-- BuildAndRessources\
+- BuildAndRessources
   - buildables.sqf
 
 In the buildables.sqf you can write your new buildables that will show up in the game.
