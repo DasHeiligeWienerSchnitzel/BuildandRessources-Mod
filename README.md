@@ -1,12 +1,9 @@
-MBuild and Ressources
+# Build and Ressources
+## Requirements
+- CBA_A3
+- ACE3
 
-Requirements
-
-CBA_A3
-ACE3
-
-Mission Maker Setup
-
+## Mission Maker Setup
 Place one or more ressource crates in Eden or through Zeus:
 - RessourceCrate_Concrete
 - RessourceCrate_Wood
@@ -42,14 +39,12 @@ BuildAndRessources_classnameList = call compile preprocessFileLineNumbers "Build
 publicVariable "BuildAndRessources_classnameList";
 
 	
-4. Ressource inside ressource crates can be checked via ACE Interaction also enables to load them onto supported flatbeds.
+Ressource inside ressource crates can be checked via ACE Interaction also enables to load them onto supported flatbeds.
 
-Build Controls
-
+## Build Controls
 Mouse wheel: Move the preview object up or down.
 Ctrl + mouse wheel: Rotate the preview object.
 Shift + mouse wheel: Move the preview object closer or farther away.
 
-Supported Flatbeds
-
+## Supported Flatbeds
 The mod supports vanilla HEMTT flatbeds and optionally supports UK3CB BAF MAN HX58 cargo vehicles when UK3CB is loaded.
