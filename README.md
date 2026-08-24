@@ -54,3 +54,5 @@ The mod supports vanilla HEMTT flatbeds and optionally supports UK3CB BAF MAN HX
 The following diagram shows how the main systems and functions of BuildAndRessources interact with each other.
 
 ![BuildAndRessources Code Architecture](mod-architecture.svg)
+
+<a href="mod-architecture.svg"><img src="https://raw.githubusercontent.com/DasHeiligeWienerSchnitzel/BuildandRessources-Mod/6307cef5e5c401f085e58ba5351d3f2f38c9b193/mod-architecture.svg alt="BuildAndRessources Code Architecture" width="100%"></a>
