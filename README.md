@@ -48,3 +48,9 @@ Ressource inside ressource crates can be checked via ACE Interaction also enable
 
 ## Supported Flatbeds
 The mod supports vanilla HEMTT flatbeds and optionally supports UK3CB BAF MAN HX58 cargo vehicles when UK3CB is loaded.
+
+## Code Architecture
+
+The following diagram shows how the main systems and functions of BuildAndRessources interact with each other.
+
+![BuildAndRessources Code Architecture](mod-architecture.svg)
