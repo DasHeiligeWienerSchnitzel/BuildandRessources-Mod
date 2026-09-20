@@ -43,3 +43,8 @@
 - GitHub for Mod
 - Documentation
 - Commentary on code
+
+## Version 1.13
+### 20.09.2026
+#### Added
+- Option to remove ruin of previously build structures.
