@@ -324,8 +324,10 @@ _caller playMove "Acts_carFixingWheel";
             [[_previewObject]] remoteExecCall ["Persistency_fnc_saveObject",2];
         };
 
+		_previewObject setVariable ["BaR_isBuiltStructure", true, true];
+
         //Adds the ACE deconstruction interaction to the completed object on all machines.
-        [_previewObject, _time, _name, _sortedCrates, _cost] remoteExecCall ["BuildAndRessources_fnc_deleteObject", 0, true];
+        [_previewObject, _time, _name, true, _sortedCrates, _cost] remoteExecCall ["BuildAndRessources_fnc_deleteObject", 0, true];
 
         //Removes the temporary ladder-blocking animation event handler.
         _caller removeEventHandler ["AnimChanged", _eventHandler];

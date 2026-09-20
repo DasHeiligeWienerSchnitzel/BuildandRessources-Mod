@@ -1,4 +1,4 @@
-params ["_object","_time","_name","_sortedCrates","_cost"];
+params ["_object","_time","_name","_refund","_sortedCrates","_cost"];
 
 //Creates the ACE interaction used to deconstruct the placed object.
 _BuildAndRessources_objectDelete = [
@@ -9,7 +9,7 @@ _BuildAndRessources_objectDelete = [
 		//On activation
 
 		params ["_target","_player","_params"];
-		_params params ["_time","_name","_sortedCrates","_cost"];
+		_params params ["_time","_name","_refund","_sortedCrates","_cost"];
 
 		//Starts the deconstruction animation on the player.
 		_player playMove "Acts_carFixingWheel";
@@ -17,12 +17,12 @@ _BuildAndRessources_objectDelete = [
 		//Starts the ACE progress bar for the deconstruction process.
 		[
 			_time/2, //Time needed
-			[_target,_player,_sortedCrates,_cost],
+			[_target,_player,_refund,_sortedCrates,_cost],
 			{
 				//On completion
 
 				params ["_params"];
-				_params params ["_target","_player","_sortedCrates","_cost"];
+				_params params ["_target","_player","_refund","_sortedCrates","_cost"];
 
 				//Deletes the object and resets the player's animation.
 				deleteVehicle _target;
@@ -30,8 +30,10 @@ _BuildAndRessources_objectDelete = [
 				_player switchMove "Stand";
 
 				//Refunds the configured amount of ressources back into nearby crates.
-				_addOrRemove = "add";
-				[_sortedCrates,_cost,_addOrRemove] remoteExecCall ["BuildAndRessources_fnc_updateRessources",2];
+				if (_refund) then {
+					private _addOrRemove = "add";
+					[_sortedCrates,_cost,_addOrRemove] remoteExecCall ["BuildAndRessources_fnc_updateRessources",2];
+				};
 
 				//Removes the object from an optional external persistency system if it is available.
 				if (!isNil "Persistency_fnc_removeObject") then {
@@ -53,8 +55,11 @@ _BuildAndRessources_objectDelete = [
 	},
 	{true},
 	{},
-	[_time,_name,_sortedCrates,_cost]	//Arguments
+	[_time,_name,_refund,_sortedCrates,_cost],	//Arguments
+	[0,0,0],
+	25,
+	[false, false, false, false, true]
 ] call ace_interact_menu_fnc_createAction;
 
 //Adds the deconstruction interaction to the object's ACE main interaction menu.
-[_object, 0, ["ACE_MainActions"], _BuildAndRessources_objectDelete] call ace_interact_menu_fnc_addActionToObject;
+[_object, 0, [], _BuildAndRessources_objectDelete] call ace_interact_menu_fnc_addActionToObject;
